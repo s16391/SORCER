@@ -30,10 +30,11 @@ MakeOrder(Order)</panel_attributes><additional_attributes></additional_attribute
 --
 CheckInventory()
 MakeCoffee(Recipe)
-MakeOrder(Order)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>540</x><y>60</y><w>120</w><h>80</h></coordinates><panel_attributes>DeliverySystem
+MakeOrder(Order)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>540</x><y>50</y><w>120</w><h>90</h></coordinates><panel_attributes>DeliverySystem
 --
 -orders: List&lt;Order&gt;
 --
+StoreOrder(Order)
 DeliverOrder(Order)
 DestroyOrder(Order)
 </panel_attributes><additional_attributes></additional_attributes></element></diagram>
