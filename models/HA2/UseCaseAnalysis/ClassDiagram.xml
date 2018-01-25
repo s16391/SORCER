@@ -1,0 +1,39 @@
+<diagram program="umletino" version="14.2"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>260</x><y>290</y><w>190</w><h>80</h></coordinates><panel_attributes>AdminPanel
+--
+-standard_recipes: List&lt;Recipe&gt;
+--
+EditStandardRecipes()
+CheckInventory()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>460</y><w>210</w><h>80</h></coordinates><panel_attributes>MainPanel
+--
+-standard_recipes: List&lt;Recipe&gt;
+--
+PurchaseCustomRecipe(Recipe)
+PurchaseStandardBeverage(Recipe)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>750</x><y>250</y><w>200</w><h>150</h></coordinates><panel_attributes>PhoneApp
+--
+-user_id
+-credit_card_info
+-custom_recipes: List&lt;Recipe&gt;
+--
+EditCreditCardInfo()
+BuyPremiumComponentsAccess()
+EditCustomRecipes()
+OrderBeverage()
+PickUpOrder()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>520</x><y>170</y><w>170</w><h>60</h></coordinates><panel_attributes>PreparationSystem
+--
+MakeCoffee(Recipe)
+MakeOrder(Order)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>540</x><y>270</y><w>120</w><h>120</h></coordinates><panel_attributes>CoffeeMachine
+--
+-cm_id
+-gps_tag
+-inventory
+--
+CheckInventory()
+MakeCoffee(Recipe)
+MakeOrder(Order)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>540</x><y>60</y><w>120</w><h>80</h></coordinates><panel_attributes>DeliverySystem
+--
+-orders: List&lt;Order&gt;
+--
+DeliverOrder(Order)
+DestroyOrder(Order)
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>
