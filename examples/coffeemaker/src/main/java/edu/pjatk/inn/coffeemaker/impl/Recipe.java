@@ -8,16 +8,26 @@ import java.io.Serializable;
 import java.rmi.RemoteException;
 
 /**
- * @author   Sarah & Mike
+ * COPYRIGHT (C) 2018 sorcersoft.org. All rights reserved
+ * This class is holding basic recipe's data
+ * @author  Sarah & Mike
+ * @version 1.0
  */
 public class Recipe implements Serializable {
+	/** Name of the recipe */
     private String name;
+    /** Price of coffee sold prepared using this recipe */
     private int price;
+    /** Amount of coffee used for this recipe */
     private int amtCoffee;
+    /** Amount of milk used for this recipe */
     private int amtMilk;
+    /** Amount of sugar used for this recipe */
     private int amtSugar;
+	/** Amount of chocolate used for this recipe */
     private int amtChocolate;
-    
+
+    /** Constructs new recipe with default values for fields */
     public Recipe() {
     	this.name = "";
     	this.price = 0;
@@ -28,13 +38,13 @@ public class Recipe implements Serializable {
     }
     
     /**
-	 * @return   Returns the amtChocolate.
+	 * @return amount of chocolate used for this recipe
 	 */
     public int getAmtChocolate() {
 		return amtChocolate;
 	}
     /**
-	 * @param amtChocolate   The amtChocolate to setValue.
+	 * @param amtChocolate The amount of chocolate which is to be set on this recipe.
 	 */
     public void setAmtChocolate(int amtChocolate) {
 		if (amtChocolate >= 0) {
@@ -42,13 +52,15 @@ public class Recipe implements Serializable {
 		} 
 	}
     /**
-	 * @return   Returns the amtCoffee.
+	 * @return amount of coffee used in this recipe
 	 */
     public int getAmtCoffee() {
 		return amtCoffee;
 	}
     /**
-	 * @param amtCoffee   The amtCoffee to setValue.
+	 * Sets the amount of milk in this recipe.
+	 * If the amount is negative, amount will not be set.
+	 * @param amtCoffee	  The amount of coffee in this recipe
 	 */
     public void setAmtCoffee(int amtCoffee) {
 		if (amtCoffee >= 0) {
@@ -56,13 +68,18 @@ public class Recipe implements Serializable {
 		} 
 	}
     /**
-	 * @return   Returns the amtMilk.
+	 * Returns integer value representing amount of milk
+	 * in this recipe
+	 * @return amount of milk used in this recipe
 	 */
     public int getAmtMilk() {
 		return amtMilk;
 	}
     /**
-	 * @param amtMilk   The amtMilk to setValue.
+	 * Sets the amount of milk in this recipe
+	 * @param amtMilk The amount of milk to be set.
+	 *                If amtMilk is negative,
+	 *                it will not be set
 	 */
     public void setAmtMilk(int amtMilk) {
 		if (amtMilk >= 0) {
@@ -70,13 +87,15 @@ public class Recipe implements Serializable {
 		} 
 	}
     /**
-	 * @return   Returns the amtSugar.
+	 * @return amount of sugar used in this recipe
 	 */
     public int getAmtSugar() {
 		return amtSugar;
 	}
     /**
-	 * @param amtSugar   The amtSugar to setValue.
+	 * Sets amount of sugar in this recipe
+	 * @param amtSugar   The amount of sugar to be set.
+	 *                   If amtSugar is negative, it will not be set
 	 */
     public void setAmtSugar(int amtSugar) {
 		if (amtSugar >= 0) {
@@ -84,13 +103,15 @@ public class Recipe implements Serializable {
 		} 
 	}
     /**
-	 * @return   Returns the key.
+	 * @return   the name of recipe
 	 */
     public String getName() {
 		return name;
 	}
     /**
-	 * @param name   The key to setValue.
+	 * Sets recipe name
+	 * @param name   the name of recipe
+	 *             	 If the name is null, it will not be set
 	 */
     public void setName(String name) {
     	if(name != null) {
@@ -98,13 +119,15 @@ public class Recipe implements Serializable {
     	}
 	}
     /**
-	 * @return   Returns the price.
+	 * @return   Returns the recipe name.
 	 */
     public int getPrice() {
 		return price;
 	}
     /**
-	 * @param price   The price to setValue.
+	 * Sets the recipe name
+	 * @param price   the price of the recipe.
+	 *                If the price is negative, it will not be set
 	 */
     public void setPrice(int price) {
 		if (price >= 0) {
@@ -117,10 +140,16 @@ public class Recipe implements Serializable {
         }
         return false;
     }
-    public String toString() {
+
+	/**
+	 * Returns a String object representing recipe
+	 * @return a string representation of this object
+	 */
+	public String toString() {
     	return name;
     }
 
+    /** */
 	static public Recipe getRecipe(Context context) throws ContextException {
 		Recipe r = new Recipe();
 		try {
