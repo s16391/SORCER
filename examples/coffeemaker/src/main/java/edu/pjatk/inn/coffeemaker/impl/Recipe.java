@@ -46,7 +46,8 @@ public class Recipe implements Serializable {
 	}
     /**
 	 * Sets the amount of milk used in this recipe
-	 * @param amtChocolate The amount of chocolate which is to be set on this recipe.
+	 * @param amtChocolate - The amount of chocolate to be used in this recipe.
+	 *                     If amtChocolate is negative, it will not be set
 	 */
     public void setAmtChocolate(int amtChocolate) {
 		if (amtChocolate >= 0) {
@@ -62,7 +63,8 @@ public class Recipe implements Serializable {
 	}
     /**
 	 * Sets the amount of milk in this recipe.
-	 * @param amtCoffee	- The amount of coffee in this recipe
+	 * @param amtCoffee	- The amount of coffee in this recipe.
+	 *                  If amtCoffee is negative, it will not be set
 	 */
     public void setAmtCoffee(int amtCoffee) {
 		if (amtCoffee >= 0) {
