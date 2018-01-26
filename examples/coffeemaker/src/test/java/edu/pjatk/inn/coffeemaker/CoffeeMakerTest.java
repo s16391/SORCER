@@ -162,5 +162,37 @@ public class CoffeeMakerTest {
 		assertTrue(coffeeMaker.addInventory(1,2,3,4));
 	}
 
+	@Test
+	public void testCheckInventory() {
+		assertEquals(coffeeMaker.checkInventory().getCoffee(), 15);
+		assertEquals(coffeeMaker.checkInventory().getChocolate(), 15);
+		assertEquals(coffeeMaker.checkInventory().getMilk(), 15);
+		assertEquals(coffeeMaker.checkInventory().getSugar(), 15);
+	}
+
+	@Test
+	public void testPurchaseBeverageWithNotEnoughMoney() {
+		coffeeMaker.addRecipe(americano);
+		assertEquals(coffeeMaker.makeCoffee(americano,20), 20);
+	}
+
+	@Test
+	public void testPurchaseBeverageChaneg() {
+		coffeeMaker.addRecipe(americano);
+		assertEquals(coffeeMaker.makeCoffee(americano,50), 10);
+
+	}
+
+	@Test
+	public void testPurchaseBeverageIngrediends() {
+		coffeeMaker.addRecipe(americano);
+		coffeeMaker.makeCoffee(americano,50);
+
+		assertEquals(coffeeMaker.checkInventory().getCoffee(), 8);
+		assertEquals(coffeeMaker.checkInventory().getChocolate(), 15);
+		assertEquals(coffeeMaker.checkInventory().getMilk(), 14);
+		assertEquals(coffeeMaker.checkInventory().getSugar(), 13);
+	}
+
 }
 

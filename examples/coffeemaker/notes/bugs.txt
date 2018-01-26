@@ -4,7 +4,7 @@ Lista bugów
 
 line: 25
 
-NUM_RECIPES co oznacza maxymalną liczbe dodanych receptur był ustawiony na 4 a dokumentacja specyfikowała 3.
+NUM_RECIPES co oznacza maksymalną liczbę dodanych receptur był ustawiony na 4 a dokumentacja specyfikowała 3.
 
 
 
@@ -19,7 +19,7 @@ Dodatkowo funkcja equal nie była przygotowana do obsługi null.
 
 line: 126
 
-Tablicka receptur przeszukiwana była pod kątem dodawanej kawy a nie istniejącej.
+Tablica receptur przeszukiwana była pod kątem dodawanej kawy a nie istniejącej.
 
 
 4. Add inventory
@@ -28,3 +28,8 @@ line: 149
 
 Ilość cukru była błędnie sprawdzana.
 
+5. Make coffee 
+
+line: 186
+
+Przy produkcji napoju dodawana była ilość kawy.
