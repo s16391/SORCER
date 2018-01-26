@@ -21,3 +21,10 @@ line: 126
 
 Tablicka receptur przeszukiwana była pod kątem dodawanej kawy a nie istniejącej.
 
+
+4. Add inventory
+
+line: 149
+
+Ilość cukru była błędnie sprawdzana.
+

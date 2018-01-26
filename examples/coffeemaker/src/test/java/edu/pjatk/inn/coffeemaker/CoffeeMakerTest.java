@@ -157,5 +157,10 @@ public class CoffeeMakerTest {
 		assertEquals(coffeeMaker.getRecipeForName("americano").getName(), "americano");
 	}
 
+	@Test
+	public void testAddingInventory() {
+		assertTrue(coffeeMaker.addInventory(1,2,3,4));
+	}
+
 }
 
