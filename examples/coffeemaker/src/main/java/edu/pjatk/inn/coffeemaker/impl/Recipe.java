@@ -145,6 +145,9 @@ public class Recipe implements Serializable {
 	 * @param r - other recipe
 	 */
     public boolean equals(Recipe r) {
+    	if (r == null) {
+    		return false;
+		}
         if((this.name).equals(r.getName())) {
             return true;
         }

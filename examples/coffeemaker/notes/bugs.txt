@@ -7,3 +7,11 @@ line: 25
 NUM_RECIPES co oznacza maxymalną liczbe dodanych receptur był ustawiony na 4 a dokumentacja specyfikowała 3.
 
 
+
+2. Delete recipe
+
+line: 92
+
+Recipe nie był usuwany, tylko przypisywany sam do siebie.
+Dodatkowo funkcja equal nie była przygotowana do obsługi null.
+
