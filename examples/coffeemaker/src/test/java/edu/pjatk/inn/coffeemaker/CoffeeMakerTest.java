@@ -74,6 +74,14 @@ public class CoffeeMakerTest {
 	}
 
 	@Test
+	public void testAddMoreThan3Recipes() {
+		assertTrue(coffeeMaker.addRecipe(espresso));
+		assertTrue(coffeeMaker.addRecipe(macchiato));
+		assertTrue(coffeeMaker.addRecipe(americano));
+		assertTrue(!coffeeMaker.addRecipe(mocha));
+	}
+
+	@Test
 	public void testContextCofee() throws ContextException {
 		assertTrue(espresso.getAmtCoffee() == 6);
 	}

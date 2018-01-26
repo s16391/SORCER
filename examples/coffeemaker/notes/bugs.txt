@@ -1,0 +1,9 @@
+Lista bugów
+
+1. Add a recipe
+
+line: 25
+
+NUM_RECIPES co oznacza maxymalną liczbe dodanych receptur był ustawiony na 4 a dokumentacja specyfikowała 3.
+
+
