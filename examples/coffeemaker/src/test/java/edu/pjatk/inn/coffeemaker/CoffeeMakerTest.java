@@ -143,5 +143,19 @@ public class CoffeeMakerTest {
 		assertEquals(coffeeMaker.makeCoffee(espresso, 200), 150);
 	}
 
+	@Test
+	public void testEditRecipe() {
+		coffeeMaker.addRecipe(americano);
+		assertTrue(coffeeMaker.editRecipe(americano, espresso));
+		assertEquals(coffeeMaker.getRecipeForName("espresso").getName(), "espresso");
+	}
+
+	@Test
+	public void testEditTheSameRecipe() {
+		coffeeMaker.addRecipe(americano);
+		assertTrue(coffeeMaker.editRecipe(americano, americano));
+		assertEquals(coffeeMaker.getRecipeForName("americano").getName(), "americano");
+	}
+
 }
 

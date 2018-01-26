@@ -15,3 +15,9 @@ line: 92
 Recipe nie był usuwany, tylko przypisywany sam do siebie.
 Dodatkowo funkcja equal nie była przygotowana do obsługi null.
 
+3. Edit recipe
+
+line: 126
+
+Tablicka receptur przeszukiwana była pod kątem dodawanej kawy a nie istniejącej.
+
