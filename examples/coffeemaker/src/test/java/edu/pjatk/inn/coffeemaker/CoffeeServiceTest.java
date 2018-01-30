@@ -1,6 +1,7 @@
 package edu.pjatk.inn.coffeemaker;
 
 import edu.pjatk.inn.coffeemaker.impl.CoffeeMaker;
+import edu.pjatk.inn.coffeemaker.impl.CoffeePrinterImpl;
 import edu.pjatk.inn.coffeemaker.impl.DeliveryImpl;
 import edu.pjatk.inn.coffeemaker.impl.Recipe;
 import org.junit.After;
@@ -158,7 +159,6 @@ public class CoffeeServiceTest {
 
 	@Test
 	public void getCoffee() throws Exception {
-
 		Task coffee = task("coffee", sig("makeCoffee", CoffeeMaker.class), context(
 				inVal("recipe/key", "espresso"),
 				inVal("coffee/paid", 120),
@@ -168,11 +168,18 @@ public class CoffeeServiceTest {
 				inVal("location", "PJATK"),
 				inVal("room", "101")));
 
-		Job drinkCoffee = job(sig("exert", ServiceJobber.class), coffee, delivery);
+		Task printing = task("printing", sig("printCoffee", CoffeePrinterImpl.class), context(
+				inVal("textToPrint", "kawa"),
+				inVal("canPrint", true)
+		));
 
-		Context out = upcontext(exert(drinkCoffee));
+		Job drinkCoffee = job(sig("exert", ServiceJobber.class), coffee, delivery, printing,
+			pipe(outPoint(coffee, "coffee/change"), inPoint(delivery,"coffee/change")),
+			pipe(outPoint(coffee, "recipe/key"), inPoint(printing, "recipe/key")),
+			strategy(Strategy.Flow.SEQ));
 
-		logger.info("out: " + out);
+		 drinkCoffee = exert(drinkCoffee);
+		assertEquals(value(context(drinkCoffee), "textToPrint"), "kawa");
 	}
 }
 
